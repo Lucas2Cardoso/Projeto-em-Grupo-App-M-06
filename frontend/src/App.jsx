@@ -111,8 +111,8 @@ function App() {
         flex-column
         align-items-start
         justify-content-center
-        h-100
-        w-100
+        h-75
+        w-75
         "
     >
       <Button
@@ -121,7 +121,7 @@ function App() {
         variant='primary'>
         Inserir produto
       </Button>
-      <Table striped bordered hover>
+      <Table bordered hover>
         <thead>
           <tr>
             <th>Nome</th>
