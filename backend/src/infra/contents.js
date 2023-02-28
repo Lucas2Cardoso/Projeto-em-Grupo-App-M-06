@@ -11,7 +11,7 @@ create table if not exists "produtos" (
 `;
 
 function create_table(){
-    db.run(table)
+    db.run(table);
 }
 
 db.serialize(() => {

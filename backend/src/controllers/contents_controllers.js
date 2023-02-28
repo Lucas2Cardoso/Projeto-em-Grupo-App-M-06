@@ -15,10 +15,10 @@ class contents_controllers{
 
     static async insert(req, res){
         const produtos = {
-            nome: req.params.nome,
-            marca_propria: req.params.marca_propria,
-            descricao: req.params.descricao,
-            preco: req.params.preco
+            nome: req.body.nome,
+            marca_propria: req.body.marca_propria,
+            descricao: req.body.descricao,
+            preco: req.body.preco
         };
 
         const result = await contents_dao.insert(produtos);
@@ -32,6 +32,12 @@ class contents_controllers{
 
     static async delete(req, res){
         const produtos = await contents_dao.delete(req.params.id);
+
+        if(produtos.error){
+            res.status(500).send('Erro');
+        }
+
+        res.send({msg: 'Removido'});
     };
 
     static async update(req, res){
@@ -43,7 +49,15 @@ class contents_controllers{
         };
 
         const result = await contents_dao.update(req.params.id, produtos);
-    }
+
+        if(result.error){
+            res.status(500).send('Erro');
+        };
+
+        res.send({
+            msg: 'Alterado'
+        });
+    };
 };
 
 export default contents_controllers;
