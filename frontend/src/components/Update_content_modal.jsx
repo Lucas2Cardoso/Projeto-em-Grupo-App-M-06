@@ -10,7 +10,7 @@ function Update_content_modal(props) {
           props.update_content(event)
         }}>
         <Modal.Header closeButton onClick={props.handle_close}>
-          <Modal.Title>Atualizar Conteúdo</Modal.Title>
+          <Modal.Title>Atualizar produto</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -23,7 +23,7 @@ function Update_content_modal(props) {
 
           <Form.Group controlId="marca_propria">
             <Form.Label>
-              Marca própria
+              Produto
             </Form.Label>
             <Form.Control defaultValue={props.content.marca_propria} type="text" />
           </Form.Group>
@@ -44,8 +44,8 @@ function Update_content_modal(props) {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={props.handle_close}>Close</Button>
-          <Button variant="primary" type="submit">Salvar</Button>
+          <Button variant="danger" onClick={props.handle_close}>Cancelar</Button>
+          <Button variant="success" type="submit">Salvar</Button>
         </Modal.Footer>
         </Form>
       </Modal >

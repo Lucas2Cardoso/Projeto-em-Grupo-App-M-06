@@ -105,27 +105,26 @@ function App() {
 
   return(
     <>
+
+  
     <Container
       className="
         d-flex
         flex-column
         align-items-start
         justify-content-center
-        h-75
-        w-75
+        h-50
+        w-50
         "
     >
-      <Button
-        className="mb-2"
-        onClick={handle_show_create_modal}
-        variant='primary'>
-        Inserir produto
-      </Button>
+      
+      <button onClick={handle_show_create_modal} type="button" class="btn btn-outline-warning">ATUALIZAR PRODUTO</button>
+
       <Table bordered hover>
         <thead>
           <tr>
             <th>Nome</th>
-            <th>Marca própria</th>
+            <th>Produto</th>
             <th>Descrição</th>
             <th>Preço</th>
             <th>Opções</th>
@@ -140,19 +139,11 @@ function App() {
               <td>{cont.descricao}</td>
               <td>{cont.preco}</td>
               <td>
-                <Button
-                  onClick={() => {
+              <button onClick={() => {
                     handle_show_update_modal()
                     set_selected_content(cont)
-                  }}
-                  variant='warning'
-                  className='m-1'
-                  >
-                  Atualizar
-                </Button>
-                <Button onClick={() => delete_content(cont.id)} variant='danger'>
-                  Excluir
-                </Button>
+                  }}type="button" class="btn btn-outline-success">Atualizar</button>
+                <button onClick={() => delete_content(cont.id)}type="button" class="btn btn-outline-danger">Excluir</button>
               </td>
 
             </tr>

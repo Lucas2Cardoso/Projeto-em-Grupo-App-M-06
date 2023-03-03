@@ -3,14 +3,14 @@ function Create_content_modal(props) {
   return(
     <div
       className="modal show"
-      style={{ display: 'block', position: 'initial' }}
+      style={{ display: 'block', position: 'initial'}}
     >
       <Modal show={props.is_modal_open}>
         <Form onSubmit={(event) => {
           props.create_content(event)
         }}>
         <Modal.Header closeButton onClick={props.handle_close}>
-          <Modal.Title>Criar Conteúdo</Modal.Title>
+          <Modal.Title>Inserir produto</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -23,7 +23,7 @@ function Create_content_modal(props) {
 
           <Form.Group controlId="marca_propria">
             <Form.Label>
-              Marca própria
+              Produto
             </Form.Label>
             <Form.Control type="text" />
           </Form.Group>
@@ -44,8 +44,8 @@ function Create_content_modal(props) {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={props.handle_close}>Close</Button>
-          <Button variant="primary" type="submit">Salvar</Button>
+          <Button variant="danger" onClick={props.handle_close}>Cancelar</Button>
+          <Button variant="success" type="submit">Salvar</Button>
         </Modal.Footer>
         </Form>
       </Modal >
